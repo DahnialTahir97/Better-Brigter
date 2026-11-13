@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better-Brighter | Electricity Utility Record Anomaly Detection</title>
+  <style>
+    :root { color-scheme: light; --ink: #172033; --muted: #596579; --line: #dce3ed; --accent: #155eef; --surface: #f5f8fc; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; color: var(--ink); line-height: 1.65; background: white; }
+    main { width: min(900px, calc(100% - 36px)); margin: 56px auto; }
+    .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; background: #eaf1ff; color: #174ea6; font-size: .85rem; font-weight: 700; }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.12; margin: 18px 0; }
+    h2 { margin-top: 36px; }
+    p { color: var(--muted); }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; margin: 24px 0; }
+    .links a { color: var(--accent); margin-right: 18px; }
+    footer { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 20px; color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <span class="tag">CSC649 · Special Topic in Computer Science</span>
+  <h1>Better-Brighter</h1>
+  <p><strong>Machine Learning for Anomaly Detection in Electricity Utility Records</strong></p>
+  <div class="panel">
+    <h2>Project overview</h2>
+    <p>Better-Brighter is a proposed academic prototype to help data quality officers identify unusual electricity utility records. It combines basic data-quality checks with an anomaly-detection experiment and flags records for human review.</p>
+  </div>
+  <h2>Problem being addressed</h2>
+  <p>Utility datasets may contain missing information, duplicate entries, invalid formats or unusual meter-reading patterns. Manual checking can take time. This project explores how automated checks can help users find records that deserve closer attention.</p>
+  <h2>Proposed approach</h2>
+  <ul>
+    <li>Use synthetic or sample records for development and demonstration.</li>
+    <li>Apply rule-based checks for missing fields, duplicates and invalid readings.</li>
+    <li>Explore Isolation Forest to flag unusual numerical readings.</li>
+    <li>Present flags as items for human review, not confirmed errors.</li>
+  </ul>
+  <h2>Technology</h2>
+  <p>Python, pandas, scikit-learn, pytest and GitHub Actions. A web dashboard and database may be considered as future extensions.</p>
+  <h2>Project documents</h2>
+  <p class="links">
+    <a href="https://github.com/DahnialTahir97/Better-Brigter">GitHub repository</a>
+    <a href="https://github.com/DahnialTahir97/Better-Brigter/tree/main/docs">Documentation</a>
+    <a href="https://github.com/DahnialTahir97/Better-Brigter/actions">GitHub Actions</a>
+  </p>
+  <div class="panel">
+    <strong>Project status</strong>
+    <p>Academic prototype and portfolio work in progress. The demonstration uses synthetic data only. It does not connect to a live utility database, modify original readings or make billing decisions.</p>
+  </div>
+  <footer>CSC649 · UiTM · Better-Brighter</footer>
+</main>
+</body>
+</html>
