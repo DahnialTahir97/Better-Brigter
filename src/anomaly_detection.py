@@ -18,4 +18,4 @@ def flag_unusual_readings(readings, contamination=0.1, random_state=42):
         random_state=random_state,
     )
     predictions = model.fit_predict(values)
-    return [prediction == -1 for prediction in predictions]
+    return [bool(prediction == -1) for prediction in predictions]
