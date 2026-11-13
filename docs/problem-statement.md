@@ -1,14 +1,13 @@
 # Problem Statement
 
 ## Who is affected?
-Electricity utility data quality officers, data analysts, and electricity utility organisations that manage meter readings and customer electricity records.
+Data quality officers and other authorised staff who review electricity utility records are the main intended users. Teams that rely on meter-reading and customer-record data may also be affected when records are incomplete, duplicated or inconsistent.
 
 ## What exactly is going wrong?
-Electricity utility records may contain missing values, duplicate entries, inconsistent data, or unusual meter readings. These issues can make it difficult to identify records that require further investigation.
+Large sets of utility records can contain missing values, duplicate identifiers, invalid formats and unusual meter-reading patterns. Manual checking can make it difficult to identify and prioritise records that need further investigation.
 
 ## Why does it matter?
-Poor data quality may affect the accuracy of reports, increase manual checking workload, and delay the identification of potential data errors.
+Poor-quality records can reduce confidence in operational reports and increase the time spent on data checking. An unusual record is not automatically an incorrect record, so potential issues should be highlighted for authorised staff to review rather than changed automatically.
 
-## Problem statement (3 to 5 sentences)
-
-Electricity utility organisations rely on accurate meter readings and customer records to support data analysis and operational decision-making. However, these records may contain missing values, duplicate entries, inconsistent information, or unusual readings that are difficult to identify through manual checking alone. These problems can increase the workload of data quality officers and affect the reliability of reports. Therefore, a machine learning-based anomaly detection system is proposed to identify unusual records and flag them for further investigation by authorised users.
+## Problem statement
+Electricity utility organisations depend on reliable meter-reading and customer records for reporting and operational activities. However, records may contain missing information, duplicates, inconsistent formats or unusual reading patterns that are not always easy to identify through manual checking. These issues can increase the workload of data quality officers and affect confidence in the information used for analysis. Better-Brighter proposes a data-quality and anomaly-detection prototype that flags unusual records for human review without changing original readings or making billing decisions.
