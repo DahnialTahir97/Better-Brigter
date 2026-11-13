@@ -1,29 +1,45 @@
 # User Stories
 
-As a data quality officer, I want to upload electricity utility records in CSV format, so that I can analyse the records efficiently.
+The following stories describe the needs of the intended users. Acceptance criteria make each story easier to verify.
 
-Acceptance criteria:
-- The system allows users to upload CSV files.
-- The system displays the uploaded file successfully.
-Related requirement: FR1
+## US-01 — Check uploaded records
+As a data quality officer, I want to provide a sample electricity utility dataset, so that I can run checks on records in one place.
 
-As a data quality officer, I want the system to validate electricity utility records, so that I can identify missing values, duplicate entries and invalid data formats.
+**Acceptance criteria**
+- The prototype accepts the agreed structured input format.
+- The prototype reports an understandable error when the input cannot be read.
 
-Acceptance criteria:
-- The system identifies missing values and duplicate entries.
-- The system flags records with invalid data formats.
-Related requirement: FR2
+## US-02 — Find incomplete records
+As a data quality officer, I want records with missing mandatory fields to be flagged, so that I can review incomplete information.
 
-As a data quality officer, I want the system to detect unusual electricity meter readings, so that I can investigate potential data anomalies.
+**Acceptance criteria**
+- A record with a missing required value is flagged.
+- The result identifies the field or rule that caused the flag.
 
-Acceptance criteria:
-- The system uses Isolation Forest to identify unusual records.
-- The system displays flagged records and their anomaly status.
-Related requirement: FR3
+## US-03 — Identify duplicates
+As a data quality officer, I want duplicate record identifiers to be identified, so that repeated entries can be investigated.
 
-As a data quality supervisor, I want to view summary statistics and export flagged records, so that I can review the findings and prepare reports.
+**Acceptance criteria**
+- Duplicate identifiers are detected using the agreed identifier field.
+- The original records remain unchanged.
 
-Acceptance criteria:
-1. After analysis, the system shall display the total number of records analysed and the number flagged as anomalies.
-2. When I export the results, the system shall generate a downloadable CSV file containing the flagged records and their anomaly status.
-Related requirements: FR5, FR6.
+## US-04 — Detect unusual readings
+As a data quality officer, I want unusual meter-reading patterns to be highlighted, so that I can investigate possible data issues.
+
+**Acceptance criteria**
+- The prototype applies a documented anomaly-detection method to suitable numerical data.
+- Flagged records are presented as candidates for review, not confirmed errors.
+
+## US-05 — Review a summary
+As a supervisor, I want to see a summary of validation findings, so that I can understand the types and number of potential issues identified.
+
+**Acceptance criteria**
+- The summary reports the total records checked and the number of records flagged.
+- Findings are grouped by validation reason where applicable.
+
+## US-06 — Protect original data
+As an authorised user, I want the original input records to remain unchanged, so that the prototype does not interfere with source readings or billing decisions.
+
+**Acceptance criteria**
+- Validation and anomaly detection produce separate findings.
+- The prototype does not overwrite the original input values.
