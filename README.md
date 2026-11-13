@@ -1,64 +1,86 @@
-# Better-Brighter: Electricity Utility Record Anomaly Detection
+# Better-Brighter: Machine Learning for Anomaly Detection in Electricity Utility Records
 
-Better-Brighter is a proposed machine learning-based project that aims to help data quality officers identify unusual electricity utility records for further review. It focuses on detecting potential data quality issues and presenting flagged records in a clear, organised way.
+Better-Brighter is an academic project that explores how data-quality checks and machine learning can help data quality officers identify unusual electricity utility records for further review.
 
-> **Project stage:** Planning and portfolio preparation (CSC649). This repository documents the project scope, requirements, user stories, technology evaluation and development plan. It does not yet represent a completed production system.
+> **Project status:** Portfolio and prototype stage for CSC649. The repository contains project documentation, a small Python demonstration, automated tests and a GitHub Actions workflow. It is not a production utility system.
+
+[![Better-Brighter CI](https://github.com/DahnialTahir97/Better-Brigter/actions/workflows/ci.yml/badge.svg)](https://github.com/DahnialTahir97/Better-Brigter/actions/workflows/ci.yml)
 
 ## Problem statement
 
-Electricity utility organisations rely on accurate meter readings and customer records for reporting and operational decision-making. However, records may contain missing values, duplicate entries, inconsistent information or unusual meter-reading patterns. Finding these issues through manual checking can take time and may make it harder for data quality officers to prioritise records that need attention. Better-Brighter proposes an anomaly-detection approach to flag unusual records for human investigation; it will not automatically alter original readings or make billing decisions.
+Electricity utility organisations depend on reliable meter-reading and customer records for reporting and operational activities. However, records may contain missing information, duplicates, inconsistent formats or unusual reading patterns that are not always easy to identify through manual checking. These issues can increase the workload of data quality officers and affect confidence in information used for analysis. Better-Brighter explores a data-quality and anomaly-detection approach that flags unusual records for human review without changing original readings or making billing decisions.
 
-## Project documents
+## Project objectives
+
+1. Identify common data-quality issues in sample electricity utility records.
+2. Apply basic validation rules to detect missing fields, duplicate identifiers and invalid readings.
+3. Explore Isolation Forest to flag unusual numerical readings for further review.
+4. Organise findings so that users can understand why a record was flagged.
+
+## Technology stack
+
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language for the prototype |
+| pandas | Data handling and preparation |
+| scikit-learn | Isolation Forest anomaly-detection experiment |
+| pytest | Automated unit testing |
+| GitHub Actions | Continuous integration and automated test execution |
+| GitHub Pages | Static project portfolio page |
+
+A Flask dashboard and relational database may be considered as future extensions. They are not required for the current small demonstration.
+
+## Repository contents
 
 - [Problem statement](docs/problem-statement.md)
 - [Requirements](docs/requirements.md)
-- [User stories](docs/user-stories.md)
+- [User stories and acceptance criteria](docs/user-stories.md)
 - [Sprint log](docs/sprint-log.md)
 - [Technology stack evaluation](docs/tech-stack-evaluation.md)
-- [Week 4 testing and CI/CD notes](docs/testing-and-cicd.md)
+- [Testing and CI/CD plan](docs/testing-and-cicd.md)
+- [Source code](src/)
+- [Automated tests](tests/)
+- [Portfolio website source](site/index.html)
+- [GitHub Actions workflows](.github/workflows/)
 
-## Proposed technology
+## Run the demonstration locally
 
-The proposed prototype uses Python for data processing and machine learning, with scikit-learn for anomaly detection and a relational database for storing sample records and validation results. A lightweight web interface may be used to review flagged records and their status. The final choice will be guided by the requirements, available time and the technology evaluation documented in this repository.
+Use Python 3.10 or later.
 
-## Project scope
-
-**Included:** sample or synthetic electricity utility records, exploratory data preparation, rule-based data checks, anomaly detection experiments, flagged-record review and summary reporting.
-
-**Not included:** access to confidential live utility databases, automatic changes to actual meter readings, automated billing decisions or production deployment.
-
-## Repository structure
-
-```text
-.
-├── README.md
-├── .gitignore
-├── docs/
-│   ├── problem-statement.md
-│   ├── requirements.md
-│   ├── user-stories.md
-│   ├── sprint-log.md
-│   ├── tech-stack-evaluation.md
-│   └── testing-and-cicd.md
-└── src/
-    └── README.md
+```bash
+python -m venv .venv
 ```
 
-## Quality and workflow
+Activate the environment, then install the requirements:
 
-The Week 4 lab provides a practice example of writing unit tests and running them through GitHub Actions. Any test result reported for Better-Brighter must come from tests written for this repository. The sample Week 4 study-planner tests are not evidence that the anomaly-detection project has passed its own tests.
+```bash
+# Windows
+.venv\Scripts\activate
 
-## Current status
+# macOS / Linux
+source .venv/bin/activate
 
-- [x] Project repository created
-- [x] Problem statement, requirements and user stories documented
-- [x] Source and documentation folders organised
-- [ ] Finalise technology evaluation
-- [ ] Define project-specific test cases
-- [ ] Implement and evaluate the anomaly-detection prototype
-- [ ] Configure and verify GitHub Actions for this project
-- [ ] Publish a project portfolio page, if required
+pip install -r requirements.txt
+pytest -q
+python src/main.py
+```
+
+## Testing and project status
+
+The CI workflow runs the project's own pytest suite on pushes to `main` and pull requests. Check the [Actions tab](https://github.com/DahnialTahir97/Better-Brigter/actions) for the latest actual result; do not use the Week 4 study-planner starter's test count as a Better-Brighter result.
+
+The static portfolio page is prepared for GitHub Pages. Once Pages is enabled with **GitHub Actions** as the build and deployment source and the deployment workflow succeeds, it should be available at:
+
+[Better-Brighter GitHub Pages](https://dahnialtahir97.github.io/Better-Brigter/)
+
+## Scope and limitations
+
+- Development and demonstration use synthetic sample data only.
+- The prototype does not connect to confidential or live electricity utility databases.
+- An anomaly flag indicates an unusual pattern; it does not prove that a record is incorrect.
+- The prototype does not modify original meter readings or make billing decisions.
+- This repository demonstrates the project portfolio and a small technical proof of concept, not a complete production system.
 
 ## Author
 
-Muhamad Dahnial bin Mohd Tahir
+**Muhamad Dahnial bin Mohd Tahir**
