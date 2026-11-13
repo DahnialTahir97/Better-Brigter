@@ -1,5 +1,19 @@
-# src
+# Source Code
 
-Source code will be placed in this folder.
+This folder contains the Better-Brighter demonstration code.
 
-Git does not track empty folders, so this file keeps the folder in the repository.
+- `validation.py` — basic record-level data-quality checks.
+- `anomaly_detection.py` — Isolation Forest example for numerical meter readings.
+- `sample_data.py` — synthetic demonstration records.
+- `main.py` — runs the demonstration and prints a summary.
+
+The code is an academic prototype. It does not connect to a live utility database, alter original meter readings or make billing decisions.
+
+## Run locally
+
+From the repository root:
+
+```bash
+pip install -r requirements.txt
+python src/main.py
+```
