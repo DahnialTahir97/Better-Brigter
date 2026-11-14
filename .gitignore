@@ -1,7 +1,4 @@
-# Files and folders Git should NOT track.
-# Rename this file to .gitignore (see the lab sheet).
-
-# Secrets: never commit these
+# Environment variables and secrets
 .env
 *.key
 *.pem
@@ -11,7 +8,7 @@ secrets.*
 .DS_Store
 Thumbs.db
 
-# Editor files
+# Editors and IDEs
 .vscode/
 .idea/
 
