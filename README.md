@@ -43,28 +43,6 @@ A Flask dashboard and relational database may be considered as future extensions
 - [Portfolio website source](site/index.html)
 - [GitHub Actions workflows](.github/workflows/)
 
-## Run the demonstration locally
-
-Use Python 3.10 or later.
-
-```bash
-python -m venv .venv
-```
-
-Activate the environment, then install the requirements:
-
-```bash
-# Windows
-.venv\Scripts\activate
-
-# macOS / Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
-pytest -q
-python src/main.py
-```
-
 ## Testing and project status
 
 The CI workflow runs the project's own pytest suite on pushes to `main` and pull requests. Check the [Actions tab](https://github.com/DahnialTahir97/Better-Brigter/actions) for the latest actual result; do not use the Week 4 study-planner starter's test count as a Better-Brighter result.
